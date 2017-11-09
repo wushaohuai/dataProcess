@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+			var arr=[{
+            "spyxm":"root1",
+            "zd":"南阳",
+            "pj":27
+        },
+        {
+            "spyxm":"root2",
+            "zd":"南阳",
+            "pj":56
+        },
+        {
+            "spyxm":"root3",
+            "zd":"南阳",
+            "pj":57
+        },
+        {
+            "spyxm":"root2",
+            "zd":"南阳",
+            "pj":583
+        },{
+            "spyxm":"root2",
+            "zd":"南阳",
+            "pj":59
+        }]
+		let a =[];
+		 for(var i=0;i<arr.length;i++){
+		 	var panduan = false;
+        	for(var j=0;j<a.length;j++){
+        		a[j].forEach(function(v,x){
+        			if(v.spyxm==arr[i].spyxm&&panduan==false){
+        				panduan=true
+        				a[j].push(arr[i])
+        				return;
+        			}
+        		})
+
+        	}
+        	if(panduan==false){
+        		a[a.length]=[arr[i]]
+        	}
+        }
+		 console.log(a)
+	</script>
+</html>

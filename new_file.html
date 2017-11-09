@@ -31,23 +31,27 @@
             "zd":"南阳",
             "pj":59
         }]
-		let a =[];
-		 for(var i=0;i<arr.length;i++){
-		 	var panduan = false;
-        	for(var j=0;j<a.length;j++){
-        		a[j].forEach(function(v,x){
-        			if(v.spyxm==arr[i].spyxm&&panduan==false){
-        				panduan=true
-        				a[j].push(arr[i])
-        				return;
-        			}
-        		})
+	//声明一个数据。
+	let a =[];
+	//先把原来的数据进行循环
+	 for(var i=0;i<arr.length;i++){
+		//第一次a数组没有数据，不会进入for循环
+		var panduan = false;
+		for(var j=0;j<a.length;j++){
+			a[j].forEach(function(v,x){
+				if(v.spyxm==arr[i].spyxm&&panduan==false){
+					panduan=true
+					a[j].push(arr[i])
+					return;
+				}
+			})
 
-        	}
-        	if(panduan==false){
-        		a[a.length]=[arr[i]]
-        	}
-        }
-		 console.log(a)
+		}
+		 //如果上面for循环没有找到相同条件的，把这条数据单独压入
+		if(panduan==false){
+			a[a.length]=[arr[i]]
+		}
+	}
+	 console.log(a)
 	</script>
 </html>
